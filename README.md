@@ -116,9 +116,11 @@ int main(void)
 
 
 
+
 ## Proteus layout(Add pdf screen shot of circuit here)
  
- 
+
+
  
  
 ## Result :
