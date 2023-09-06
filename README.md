@@ -72,36 +72,42 @@ We are now at the last part of step by step guide on how to simulate STM32 proje
 
 ## STM 32 CUBE PROGRAM :
 ```
-###Developed By:challa sandeep
-###Ref No:212221240011
+###Developed By:Samyuktha S
+###Register No:212222240089
 ```
-
 ```
 #include "main.h"
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-int main(void)
+#include"stdbool.h"
+bool pb;
+
+while (1)
 {
-  HAL_Init();
-  SystemClock_Config();
-  MX_GPIO_Init();
-  while (1)
-  {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-	  HAL_Delay(500);
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-	  HAL_Delay(500);
-  }
- }
+   pb = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+   if(pb==0)
+   {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+      HAL_Delay(500);
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
+      HAL_Delay(500);
+   }
+   else
+   {
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
+      HAL_Delay(500);
+   }
+}
+
  ```
 
 ## Output screen shots of proteus  :
-## BUTTON OFF LED OFF CONDITION
-![output](https://github.com/RuchithaReddy28/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/a1.png?raw=true)
-## BUTTON ON LED ON CONDITION
-![output](https://github.com/RuchithaReddy28/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/a2.png?raw=true)
-## Proteus layout(Add pdf screen shot of circuit here)
-![output](https://github.com/RuchithaReddy28/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/blob/main/a3.png?raw=true)
+## LED OFF CONDITION
+![image](https://github.com/SamyukthaSreenivasan/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/assets/119475703/89d31d8e-ffc4-40e1-b8f4-2f4b3c9d3b98)
+
+## LED ON CONDITION
+![image](https://github.com/SamyukthaSreenivasan/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/assets/119475703/3a81d61e-7b99-4b7d-bba7-9ef0c66fe71c)
+
+## Proteus layout
+![image](https://github.com/SamyukthaSreenivasan/EXPERIMENT--03-SIMULATION-OF-PUSHBUTTON-AND-LED-WITH-PROTEUS-/assets/119475703/6fa7773f-c370-451a-87ec-20b941c65c74)
 
 ## Result :
 Interfacing a digital output and digital input  with ARM microcontroller are simulated in proteus and the results are verified.
